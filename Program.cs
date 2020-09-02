@@ -28,12 +28,20 @@ namespace ShootingDice
             Player large = new LargeDicePlayer();
             large.Name = "Bigun Rollsalot";
 
+            Player smacktalk = new SmackTalkingPlayer();
+            smacktalk.Name = "One Note Nick";
+
             player1.Play(large);
 
             Console.WriteLine("-------------------");
 
-            List<Player> players = new List<Player>() {
-                player1, player2, player3, large
+            List<Player> players = new List<Player>()
+            {
+                player1,
+                player2,
+                player3,
+                large,
+                smacktalk
             };
 
             PlayMany(players);
@@ -62,7 +70,7 @@ namespace ShootingDice
             {
                 Console.WriteLine("-------------------");
 
-                // Make adjacent players play noe another
+                // Make adjacent players play one another
                 Player player1 = shuffledPlayers[i];
                 Player player2 = shuffledPlayers[i + 1];
                 player1.Play(player2);
