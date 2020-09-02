@@ -8,7 +8,7 @@ namespace ShootingDice
     public class SmackTalkingPlayer : Player
     {
         public string Taunt { get; } = "One Note Nick shouts, \"You're gonna lose!\"";
-        public override int Roll()
+        public override int Roll(int otherRoll)
         {
             // Smack talk before rolling
             Console.WriteLine(Taunt);

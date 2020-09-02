@@ -31,6 +31,9 @@ namespace ShootingDice
             Player smacktalk = new SmackTalkingPlayer();
             smacktalk.Name = "One Note Nick";
 
+            Player cheater = new OneHigherPlayer();
+            cheater.Name = "I Bring My Own Dice";
+
             player1.Play(large);
 
             Console.WriteLine("-------------------");
@@ -41,7 +44,8 @@ namespace ShootingDice
                 player2,
                 player3,
                 large,
-                smacktalk
+                smacktalk,
+                cheater
             };
 
             PlayMany(players);
