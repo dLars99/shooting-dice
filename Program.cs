@@ -48,6 +48,9 @@ namespace ShootingDice
             Player lucky = new UpperHalfPlayer();
             lucky.Name = "Lucky";
 
+            Player lousySport = new SoreLoserUpperHalfPlayer();
+            lousySport.Name = "Cartman";
+
             Console.WriteLine("-------------------");
 
             List<Player> players = new List<Player>()
@@ -61,7 +64,8 @@ namespace ShootingDice
                 human,
                 bigTalk,
                 poorSport,
-                lucky
+                lucky,
+                lousySport
             };
 
             PlayMany(players);
