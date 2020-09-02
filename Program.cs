@@ -33,6 +33,9 @@ namespace ShootingDice
             Player smacktalk = new SmackTalkingPlayer();
             smacktalk.Name = "One Note Nick";
 
+            Player cheater = new OneHigherPlayer();
+            cheater.Name = "I Bring My Own Dice";
+
             Player human = new HumanPlayer();
             human.Name = "John Doe";
 
@@ -48,6 +51,7 @@ namespace ShootingDice
                 player3,
                 large,
                 smacktalk,
+                cheater,
                 human,
                 bigTalk
             };
