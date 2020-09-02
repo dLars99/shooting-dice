@@ -44,6 +44,11 @@ namespace ShootingDice
                 }
                 catch (Exception ex)
                 {
+                    if (tries > 5)
+                    {
+                        Console.WriteLine($"{Name} flips the table and stomps out of the room!");
+                        break;
+                    }
                     Console.WriteLine($"{Name} shouts \"Best {tries} out of {totalTries}!\"");
                     ++tries;
                     totalTries += 2;
