@@ -31,6 +31,9 @@ namespace ShootingDice
             Player smacktalk = new SmackTalkingPlayer();
             smacktalk.Name = "One Note Nick";
 
+            Player human = new HumanPlayer();
+            human.Name = "John Doe";
+
             player1.Play(large);
 
             Console.WriteLine("-------------------");
@@ -41,7 +44,8 @@ namespace ShootingDice
                 player2,
                 player3,
                 large,
-                smacktalk
+                smacktalk,
+                human
             };
 
             PlayMany(players);
