@@ -28,13 +28,19 @@ namespace ShootingDice
             Player large = new LargeDicePlayer();
             large.Name = "Bigun Rollsalot";
 
+            player1.Play(large);
+
             Player smacktalk = new SmackTalkingPlayer();
             smacktalk.Name = "One Note Nick";
 
             Player cheater = new OneHigherPlayer();
             cheater.Name = "I Bring My Own Dice";
 
-            player1.Play(large);
+            Player human = new HumanPlayer();
+            human.Name = "John Doe";
+
+            Player bigTalk = new CreativeSmackTalkingPlayer();
+            bigTalk.Name = "Mickey Mouth";
 
             Console.WriteLine("-------------------");
 
@@ -45,7 +51,9 @@ namespace ShootingDice
                 player3,
                 large,
                 smacktalk,
-                cheater
+                cheater,
+                human,
+                bigTalk
             };
 
             PlayMany(players);
