@@ -42,6 +42,9 @@ namespace ShootingDice
             Player bigTalk = new CreativeSmackTalkingPlayer();
             bigTalk.Name = "Mickey Mouth";
 
+            Player poorSport = new SoreLoserPlayer();
+            poorSport.Name = "Peyton";
+
             Console.WriteLine("-------------------");
 
             List<Player> players = new List<Player>()
@@ -53,7 +56,8 @@ namespace ShootingDice
                 smacktalk,
                 cheater,
                 human,
-                bigTalk
+                bigTalk,
+                poorSport
             };
 
             PlayMany(players);
