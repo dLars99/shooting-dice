@@ -7,7 +7,7 @@ namespace ShootingDice
     // A player that prompts the user to enter a number for a roll
     public class HumanPlayer : Player
     {
-        public override int Roll()
+        public void GetDieSize()
         {
             // Prompt the user for a number
             bool convertSuccess = false;
@@ -24,9 +24,7 @@ namespace ShootingDice
                 }
 
             }
-
-            return new Random().Next(userDieSides) + 1;
+            DiceSize = userDieSides;
         }
-
     }
 }

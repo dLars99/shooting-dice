@@ -30,25 +30,28 @@ namespace ShootingDice
 
             player1.Play(large);
 
-            Player smacktalk = new SmackTalkingPlayer();
+            Console.WriteLine("-------------------");
+
+            SmackTalkingPlayer smacktalk = new SmackTalkingPlayer();
             smacktalk.Name = "One Note Nick";
 
-            Player cheater = new OneHigherPlayer();
+            OneHigherPlayer cheater = new OneHigherPlayer();
             cheater.Name = "I Bring My Own Dice";
 
-            Player human = new HumanPlayer();
+            HumanPlayer human = new HumanPlayer();
             human.Name = "John Doe";
+            human.GetDieSize();
 
-            Player bigTalk = new CreativeSmackTalkingPlayer();
+            CreativeSmackTalkingPlayer bigTalk = new CreativeSmackTalkingPlayer();
             bigTalk.Name = "Mickey Mouth";
 
-            Player poorSport = new SoreLoserPlayer();
+            SoreLoserPlayer poorSport = new SoreLoserPlayer();
             poorSport.Name = "Peyton";
 
-            Player lucky = new UpperHalfPlayer();
+            UpperHalfPlayer lucky = new UpperHalfPlayer();
             lucky.Name = "Lucky";
 
-            Player lousySport = new SoreLoserUpperHalfPlayer();
+            SoreLoserUpperHalfPlayer lousySport = new SoreLoserUpperHalfPlayer();
             lousySport.Name = "Cartman";
 
             Console.WriteLine("-------------------");
