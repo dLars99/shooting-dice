@@ -14,49 +14,26 @@ namespace ShootingDice
         }
         public override void Play(Player other)
         {
-            // Set up number of tries for temper tantrums
-            int tries = 2;
-            int totalTries = 3;
+            // Call roll for "this" object and for the "other" object
+            int myRoll = Roll();
+            int otherRoll = other.Roll();
 
-            while (true)
+            Console.WriteLine($"{Name} rolls a {myRoll}");
+            Console.WriteLine($"{other.Name} rolls a {otherRoll}");
+            if (myRoll > otherRoll)
             {
-                try
-                {
-
-                    // Call roll for "this" object and for the "other" object
-                    int myRoll = Roll();
-                    int otherRoll = other.Roll();
-
-                    Console.WriteLine($"{Name} rolls a {myRoll}");
-                    Console.WriteLine($"{other.Name} rolls a {otherRoll}");
-                    if (myRoll > otherRoll)
-                    {
-                        Console.WriteLine($"{Name} Wins!");
-                        break;
-                    }
-                    else if (myRoll < otherRoll)
-                    {
-                        Console.WriteLine($"{other.Name} Wins!");
-                        throw new Exception();
-                    }
-                    else
-                    {
-                        // if the rolls are equal it's a tie
-                        Console.WriteLine("It's a tie");
-                        throw new Exception();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    if (tries > 3)
-                    {
-                        Console.WriteLine($"{Name} screams loud profanities at {other.Name} as he bolts out!");
-                        break;
-                    }
-                    Console.WriteLine($"{Name} shouts \"Best {tries} out of {totalTries}!\"");
-                    ++tries;
-                    totalTries += 2;
-                }
+                Console.WriteLine($"{Name} Wins!");
+            }
+            else if (myRoll < otherRoll)
+            {
+                Console.WriteLine($"{other.Name} Wins!");
+                throw new Exception();
+            }
+            else
+            {
+                // if the rolls are equal it's a tie
+                Console.WriteLine("It's a tie");
+                throw new Exception();
             }
         }
 

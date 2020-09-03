@@ -6,7 +6,7 @@ namespace ShootingDice
     // A SmackTalkingPlayer who randomly selects a taunt from a list to say to the other player
     public class CreativeSmackTalkingPlayer : Player
     {
-        public List<string> Taunt { get; } = new List<string>()
+        private List<string> Taunt { get; } = new List<string>()
         {
             "My dice love me more than I love winnin'!",
             "Hope you have Uber for when I take those shoes!",
