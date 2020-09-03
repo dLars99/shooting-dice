@@ -7,7 +7,7 @@ namespace ShootingDice
     // A Player who shouts a taunt every time they roll dice
     public class SmackTalkingPlayer : Player
     {
-        public string Taunt { get; } = "You're gonna lose!";
+        private string Taunt { get; } = "You're gonna lose!";
         public override int Roll()
         {
             // Smack talk before rolling

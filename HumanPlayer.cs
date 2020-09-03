@@ -11,22 +11,21 @@ namespace ShootingDice
         {
             // Prompt the user for a number
             bool convertSuccess = false;
-            int num = -1;
+            int userDieSides = -1;
             while (!convertSuccess)
             {
-                Console.WriteLine($"What did you roll, human {Name}?");
+                Console.WriteLine($"What size die have you, human {Name}?");
                 string userDie = Console.ReadLine();
 
-                convertSuccess = int.TryParse(userDie, out num);
-                if (!convertSuccess || num < 1 || num > 6)
+                convertSuccess = int.TryParse(userDie, out userDieSides);
+                if (!convertSuccess)
                 {
-                    Console.WriteLine("That is not what your dice say. Try again.");
-                    // Switch back to false when conversion is successful, but out of range
-                    convertSuccess = false;
+                    Console.WriteLine("Do not make things up. Try again.");
                 }
+
             }
 
-            return num;
+            return new Random().Next(userDieSides) + 1;
         }
 
     }

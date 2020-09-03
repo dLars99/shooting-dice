@@ -97,7 +97,31 @@ namespace ShootingDice
                 // Make adjacent players play one another
                 Player player1 = shuffledPlayers[i];
                 Player player2 = shuffledPlayers[i + 1];
-                player1.Play(player2);
+
+                // Set up number of tries for temper tantrums
+                int tries = 2;
+                int totalTries = 3;
+
+                while (true)
+                {
+                    try
+                    {
+                        player1.Play(player2);
+                        break;
+                    }
+                    catch (Exception ex)
+                    {
+                        if (tries > 4)
+                        {
+                            Console.WriteLine($"{player1.Name} flips the table and stomps out of the room!");
+                            break;
+                        }
+                        Console.WriteLine($"{player1.Name} shouts \"Best {tries} out of {totalTries}!\"");
+                        ++tries;
+                        totalTries += 2;
+                    }
+
+                }
             }
         }
     }
